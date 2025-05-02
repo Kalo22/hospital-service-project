@@ -1,0 +1,81 @@
+openapi: 3.0.1
+info:
+  title: hospitalServiceAPi
+  description: API Definition of hospitalServiceAPI
+  version: 1.0.0
+servers:
+- url: http://localhost:8290/hospitalserviceapi
+paths:
+  /addPatient:
+    post:
+      requestBody:
+        description: Sample Payload
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                payload:
+                  type: object
+        required: false
+      responses:
+        default:
+          description: Default response
+  /patient/{patient_id}:
+    get:
+      parameters:
+      - name: patient_id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          description: Default response
+    delete:
+      parameters:
+      - name: patient_id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          description: Default response
+  /patient/{patient_id}/history:
+    post:
+      parameters:
+      - name: patient_id
+        in: path
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: Sample Payload
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                payload:
+                  type: object
+        required: false
+      responses:
+        default:
+          description: Default response
+  /patient/{patient_id}/history/{medical_record_id}:
+    delete:
+      parameters:
+      - name: patient_id
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: medical_record_id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        default:
+          description: Default response
