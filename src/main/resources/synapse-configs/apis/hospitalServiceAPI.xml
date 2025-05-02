@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <api context="/hospitalserviceapi" name="hospitalServiceAPi" xmlns="http://ws.apache.org/ns/synapse">
 
-	<!-- POST resource to add a patient -->
     <resource methods="POST" uri-template="/addPatient">
         <inSequence>
             <!-- Remove the /addPatient postfix -->
@@ -38,8 +37,7 @@
             <sequence key="customFaultSequence"/>
         </faultSequence>
     </resource>
-    
-    <!-- GET resource to get a patient -->
+
     <resource methods="GET" uri-template="/patient/{patient_id}">
         <inSequence>
             <!-- Remove the URI postfix -->
@@ -77,7 +75,6 @@
         </faultSequence>
     </resource>
     
-    <!-- DELETE resource to remove a patient -->
     <resource methods="DELETE" uri-template="/patient/{patient_id}">
         <inSequence>
             <!-- Remove the URI postfix -->
@@ -111,7 +108,6 @@
         </faultSequence>
     </resource>
 
-	<!-- POST resource to add a medical record -->
     <resource methods="POST" uri-template="/patient/{patient_id}/history">
         <inSequence>
             <!-- Remove the URI postfix -->
@@ -162,7 +158,6 @@
         </faultSequence>
     </resource>
     
-    <!-- DELETE resource to remove a medical record -->
     <resource methods="DELETE" uri-template="/patient/{patient_id}/history/{medical_record_id}">
         <inSequence>
             <!-- Remove the URI postfix -->
@@ -196,7 +191,4 @@
         </faultSequence>
     </resource>
     
-    
-    <!--TODO: Impement the other resources-->
-    <!--TODO: use named endpoints for the resources-->>
 </api>
